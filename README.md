@@ -1,4 +1,4 @@
-# Ai Clean Handoff — Clean handoffs for AI-assisted teams
+# AI Clean Handoff — Clean handoffs for AI-assisted teams
 
 [![Checks](https://github.com/bentran1vn/copybara-release-sync/actions/workflows/ci.yml/badge.svg)](https://github.com/bentran1vn/copybara-release-sync/actions/workflows/ci.yml)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
