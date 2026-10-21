@@ -1,0 +1,25 @@
+name: Checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: '9.0.x'
+      - name: Validate scripts and configuration
+        run: |
+          bash -n .copybara/sync-local.sh .copybara/ai_cleanup.sh
+          python3 .copybara/cfg.py .copybara/copy.bara.sky check
+      - name: Run isolated tests
+        run: python3 -B -m unittest discover -s .copybara/tests -p 'test_*.py'
+      - name: Build comment parser
+        run: dotnet build .copybara/comment-cleaner/CommentCleaner.csproj --nologo

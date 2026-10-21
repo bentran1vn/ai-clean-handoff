@@ -1,0 +1,12 @@
+.DS_Store
+.copybara/local.env
+.env
+.env.*
+!.env.example
+**/__pycache__/
+*.py[cod]
+**/bin/
+**/obj/
+.cache/
+artifacts/
+*.log
